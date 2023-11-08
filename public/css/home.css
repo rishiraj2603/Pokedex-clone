@@ -1,0 +1,53 @@
+*{
+    /* border: 2px solid black; */
+}
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@100;300;400;500&display=swap');
+
+body{
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1613771404721-1f92d799e49f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80);
+    background-repeat: no-repeat;
+    /* position:absolute; */
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.content a:link{
+    text-decoration: none;
+}
+.content a:hover{
+    color: black;
+}
+.main{
+    position:absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content{
+    color: #FCFFFD;
+    position:relative;
+    top: 15em;
+    left: 35em;
+}
+
+.Navbar{
+    /* color: #e6b46f; */
+    margin: 10px;
+    height: 50px;
+    background: #fd8765;
+}
+.Navbar a:link{
+    /* color: #e6b46f; */
+    text-decoration: none;
+}
+.Navbar a:hover{
+    /* color: #e6b46f; */
+}
+.Navbar a{
+    align-items: center;
+}
+
+.Navbar a:active{
+    color: #e6b46f;
+}
