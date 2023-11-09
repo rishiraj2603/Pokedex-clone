@@ -1,30 +1,5 @@
 <% layout('/layout/boilerplate') -%>
-  <div class="d-flex flex-wrap gap-3 justify-content-center">
-
-    <% for( let pokemon of pokemonDataImage) { %>
-
-            <div class="card" id="link-1" style="width: 18rem;">
-              <img src="<%= pokemon.image %>" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <%= pokemon.ename %>
-                </h5>
-                <p class="card-text">
-                  <%= pokemon.cname %>
-                </p>
-                <p class="card-text">
-                  <%= pokemon.id %>
-                </p>
-                <% for( let pokemonType of pokemon.type ) { %>
-                  <p class="card-text">
-                    <%= pokemonType.ename %>
-                  </p>
-                  <% } %>
-              </div>
-            </div>
-            <% } %>
-
-  </div>
+<%- include('../partials/pokemonCard.ejs')  %>
 
 
   <nav aria-label="Page navigation example">

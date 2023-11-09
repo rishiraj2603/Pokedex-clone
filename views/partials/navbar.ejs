@@ -1,14 +1,44 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+  <div class="container-fluid gap-5">
+    <a class="navbar-brand" href="/pokedex/1">Pokedex</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Pokemon Types
+      </a>
+    
+      <ul class="dropdown-menu overflow-scroll">
+        <li><a class="dropdown-item" href="/pokemon/Flying">Flying</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Rock">Rock</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Water">Water</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Dragon">Dragon</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Ground">Ground</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Ghost">Ghost</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Fighting">Fighting</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Electric">Electric</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Dark">Dark</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Fire">Fire</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Ice">Ice</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Bug">Bug</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Grass">Grass</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Steel">Steel</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Psychic">Psychic</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Normal">Normal</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Poison">Poison</a></li>
+        <li><a class="dropdown-item" href="/pokemon/Fairy">Fairy</a></li>
+      </ul>
     </div>
-  </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex" role="search" id="search_form">
+        <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" id="btn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<script src="/js/search.js"></script>
