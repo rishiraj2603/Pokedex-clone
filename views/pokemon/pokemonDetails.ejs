@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pokemon.ename %>
+    </title>
+    <link rel="icon" type="image/x-icon" href="/avatar.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/dropDown.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <%- include('../partials/navbar.ejs') %>
+    </div>
+    <div class="body">
+        <div class="card text-center">
+            <div class="card-header">
+                <%= pokemon.ename %>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><img src="<%= pokemon.image %>" alt=""></h5>
+                <p class="card-text">Name: <%= pokemon.ename %>
+                </p>
+                <p class="card-text">Japanese Name: <%= pokemon.jname %>
+                </p>
+                <p class="card-text">Chinese Name: <%= pokemon.cname %>
+                </p>
+                <% for( let types of pokemon.type) { %>
+                    <p class="card-text">Type: <%= types.ename %>
+                    </p>
+                    <% } %>
+                        <p class="card-text">ID: <%= pokemon.id %>
+                        </p>
+            </div>
+            <div class="card-footer text-body-secondary">
+                Base Attack : <span>
+                    <%= pokemon.base.Attack %>
+                </span>
+                Base Defence : <span>
+                    <%= pokemon.base.Defence %>
+                </span>
+                Base HP : <span>
+                    <%= pokemon.base.HP %>
+                </span>
+                Base SpAtk : <span>
+                    <%= pokemon.base.SpAtk %>
+                </span>
+                Base SpDef : <span>
+                    <%= pokemon.base.SpDef %>
+                </span>
+                Base Speed : <span>
+                    <%= pokemon.base.Speed %>
+                </span>
+            </div>
+            <div>
+                <h4 class="card-body">Skills</h4>
+                <% for( let egg of pokemon.skills.egg) { %>
+                    <p>Skill Name: <%= egg.ename %>
+                            Power: <%= egg.power %>
+                                Pp: <%= egg.pp %>
+                                    Accuracy: <%= egg.accuracy %>
+                    </p>
+                    <% } %>
+            </div>
+            <br><br>
+            <div>
+                <% for( let levelup of pokemon.skills.level_up) { %>
+                    <p>Skill Name: <%= levelup.ename %>
+                            Power: <%= levelup.power %>
+                                Pp: <%= levelup.pp %>
+                                    Accuracy:<%= levelup.accuracy %>
+                    </p>
+                    <% } %>
+            </div>
+            <br><br>
+            <div>
+                <% for( let tm of pokemon.skills.tm) { %>
+                    <p>Skill Name: <%= tm.ename %>
+                            Power: <%= tm.power %>
+                                Pp: <%= tm.pp %>
+                                    Accuracy: <%= tm.accuracy %>
+                    </p>
+                    <% } %>
+            </div>
+            <br><br>
+            <div>
+                <% for( let transfer of pokemon.skills.transfer) { %>
+                    <p>Skill Name: <%= transfer.ename %>
+                            Power: <%= transfer.power %>
+                                Pp: <%= transfer.pp %>
+                                    Accuracy: <%= transfer.accuracy %>
+                    </p>
+                    <% } %>
+            </div>
+            <br><br>
+            <div>
+                <% for( let tutor of pokemon.skills.tutor) { %>
+                    <p>Skill Name: <%= tutor.ename %>
+                            Power: <%= tutor.power %>
+                                Pp: <%= tutor.pp %>
+                                    Accuracy: <%= tutor.accuracy %>
+                    </p>
+                    <% } %>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

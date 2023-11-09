@@ -1,4 +1,4 @@
-<div class="d-flex flex-wrap gap-3 justify-content-center">
+<div class="cards d-flex flex-wrap gap-3 justify-content-center">
 
     <% for( let pokemon of pokemons) { %>
 
@@ -6,7 +6,7 @@
             <img src="<%= pokemon.image %>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">
-                    <%= pokemon.ename %>
+                    <a href="/pokemon/<%= pokemon.ename %>"><%= pokemon.ename %></a>
                 </h5>
                 <p class="card-text">
                     <%= pokemon.cname %>
@@ -16,7 +16,7 @@
                 </p>
                 <% for( let pokemonType of pokemon.type ) { %>
                     <p class="card-text btn">
-                        <a href="/pokemon/<%= pokemonType.ename %>">
+                        <a href="/pokemon/type/<%= pokemonType.ename %>">
                             <%= pokemonType.ename %>
                         </a>
                     </p>
@@ -26,3 +26,5 @@
         <% } %>
 
 </div>
+
+<script src="/js/details.js"></script>

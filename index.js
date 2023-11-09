@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/image',express.static(path.join(__dirname, "/Pokedex-Data/images/img")));
+app.use('/images',express.static(path.join(__dirname, "/Pokedex-Data/images/img")));
 
 
 
@@ -26,8 +26,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 
 const router = require('./routes/router');
-const loaderRoute = require('./routes/loader');
-// app.use(loaderRoute);
 app.use(router);
 mongoose.connect('mongodb://localhost/pokedex',{ useNewUrlParser: true , useUnifiedTopology: true   });
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
