@@ -6,20 +6,20 @@
             <img src="<%= pokemon.image %>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">
-                    <a href="/pokemon/<%= pokemon.ename %>"><%= pokemon.ename %></a>
+                    <a id="pokemonName" href="/pokemon/<%= pokemon.ename %>"><%= pokemon.ename %></a>
                 </h5>
                 <p class="card-text">
-                    <%= pokemon.cname %>
+                    <a id="pokemonCName" href="/pokemon/<%= pokemon.ename %>"><%= pokemon.cname %></a>
                 </p>
                 <p class="card-text">
                     <%= pokemon.id %>
                 </p>
                 <% for( let pokemonType of pokemon.type ) { %>
-                    <p class="card-text btn">
-                        <a href="/pokemon/type/<%= pokemonType.ename %>">
-                            <%= pokemonType.ename %>
-                        </a>
-                    </p>
+                        <p class="card-text btn type">
+                            <a class="link" href="/pokemon/type/<%= pokemonType.ename %>">
+                                <%= pokemonType.ename %>
+                            </a>
+                        </p>
                     <% } %>
             </div>
         </div>
@@ -27,4 +27,4 @@
 
 </div>
 
-<script src="/js/details.js"></script>
+<script src="/js/typeColor.js"></script>

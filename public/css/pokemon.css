@@ -1,5 +1,5 @@
-*{
-    /* border: 2px solid black; */
+body{
+    background-color: #bde0fe;
 }
 .card{
     border: 2px solid beige;
@@ -9,4 +9,42 @@
 .card:hover{
     scale: 1.1;
     transition: 1.5s;
+}
+#link:active{
+    text-decoration: none;
+}
+#link:hover{
+    scale: 1.2;
+}
+.link{
+    color: white;
+    text-decoration: none;
+    /* scale: 1.2; */
+   /* border: 2px solid black; */
+}
+#pokemonName{
+    text-decoration: none;
+    color: #D972FF;
+}
+.card{
+    background-color:#dde3f3;
+}
+.cards{
+    background: url(https://images.unsplash.com/photo-1647892591690-25cf830cda51?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fHBvayVDMyVBOW1vbnxlbnwwfHwwfHx8MA%3D%3D);
+}
+.navbar{
+    width: 100%;
+}
+.main-navbar{
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    background-color: #bde0fe;
+    padding-left: 4%;
+    align-items: center;
+    justify-content: space-between;
+}
+#pokemonCName{
+    text-decoration: none;
+    color: #3f37c9;
 }

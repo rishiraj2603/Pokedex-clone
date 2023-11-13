@@ -7,10 +7,11 @@
     <title>
         <%= pokemon.ename %>
     </title>
-    <link rel="icon" type="image/x-icon" href="/avatar.png">
+    <link rel="icon" type="icon" href="/image/avatar.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/dropDown.css">
+    <link rel="stylesheet" href="/css/pokemon copy.css">
 
 </head>
 
@@ -58,58 +59,257 @@
                     <%= pokemon.base.Speed %>
                 </span>
             </div>
-            <div>
-                <h4 class="card-body">Skills</h4>
-                <% for( let egg of pokemon.skills.egg) { %>
-                    <p>Skill Name: <%= egg.ename %>
-                            Power: <%= egg.power %>
-                                Pp: <%= egg.pp %>
-                                    Accuracy: <%= egg.accuracy %>
-                    </p>
-                    <% } %>
+            <h4 class="card-body">Skills</h4>
+            <div class="skills">
+                <div class="levelup">
+                    <h4>Moves Learned By LEVEL UP</h4>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Skill Name</th>
+                            <th>Power</th>
+                            <th>Pp</th>
+                            <th>Accuracy</th>
+                        </tr>
+                        <% for( let levelup of pokemon.skills.level_up) { %>
+                            <tr>
+                                <td>
+                                    <%= levelup.ename %>
+                                </td>
+                                <td>
+                                    <% if (levelup.power===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= levelup.power %>
+                                            </p>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (levelup.pp===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= levelup.pp %>
+                                            </p>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (levelup.accuracy===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= levelup.accuracy %>
+                                            </p>
+                                            <% } %>
+                                
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+                <br><br>
+                <div>
+                    <h4>Moves Learned By Egg</h4>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Skill Name</th>
+                            <th>Power</th>
+                            <th>Pp</th>
+                            <th>Accuracy</th>
+                        </tr>
+                        <% for( let egg of pokemon.skills.egg) { %>
+                            <tr>
+                                <td>
+                                    <%= egg.ename %>
+                                </td>
+                                <td>
+                                    <% if (egg.power===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= egg.power %>
+                                            </p>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (egg.pp===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= egg.pp %>
+                                            </p>
+                                            <% } %>
+                                   
+                                </td>
+                                <td>
+                                    <% if (egg.accuracy === null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= egg.accuracy %>
+                                            </p>
+                                            <% } %>
+                                
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+                <br><br>
+                <div>
+                    <h4>Moves Learner By TM</h4>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Skill Name</th>
+                            <th>Power</th>
+                            <th>Pp</th>
+                            <th>Accuracy</th>
+                        </tr>
+                        <% for( let tm of pokemon.skills.tm) { %>
+                            <tr>
+                                <td>
+                                    <%= tm.ename %>
+                                </td>
+                                <td>
+                                    <% if (tm.power===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= tm.power %>
+                                            </p>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (tm.pp===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= tm.pp %>
+                                            </p>
+                                            <% } %>
+                                
+                                </td>
+                                <td>
+                                    <% if (tm.accuracy ===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= tm.accuracy %>
+                                            </p>
+                                            <% } %>
+                                   
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+                <br><br>
+                <div>
+                    <h4>Moves Learner By Transfer</h4>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Skill Name</th>
+                            <th>Power</th>
+                            <th>Pp</th>
+                            <th>Accuracy</th>
+                        </tr>
+                        <% for( let transfer of pokemon.skills.transfer) { %>
+                            <tr>
+                                <td>
+                                    <%= transfer.ename %>
+                                </td>
+                                <td>
+                                    <% if (transfer.power===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= transfer.power %>
+                                            </p>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (transfer.pp===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= transfer.pp %>
+                                            </p>
+                                            <% } %>
+                                    
+                                </td>
+                                <td>
+                                    <% if (transfer.accuracy===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= transfer.accuracy %>
+                                            </p>
+                                            <% } %>
+                                    
+                                </td>
+
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+                <br><br>
+                <div>
+                    <h4>Moves Learner By Tutor</h4>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Skill Name</th>
+                            <th>Power</th>
+                            <th>Pp</th>
+                            <th>Accuracy</th>
+                        </tr>
+                        <% for( let tutor of pokemon.skills.tutor) { %>
+                            <tr>
+                                <td>
+                                    <%= tutor.ename %>
+                                </td>
+                                <td>
+                                    <% if (tutor.power===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= tutor.power %>
+                                            </p>
+                                            <% } %>
+                                </td>
+                                <td>
+                                    <% if (tutor.pp===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= tutor.pp %>
+                                            </p>
+                                            <% } %>
+                                
+                                </td>
+                                <td>
+                                    <% if (tutor.accuracy===null) { %>
+                                        <p>0</p>
+                                        <% } else { %>
+                                            <p>
+                                                <%= tutor.accuracy %>
+                                            </p>
+                                            <% } %>
+                                
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
             </div>
-            <br><br>
-            <div>
-                <% for( let levelup of pokemon.skills.level_up) { %>
-                    <p>Skill Name: <%= levelup.ename %>
-                            Power: <%= levelup.power %>
-                                Pp: <%= levelup.pp %>
-                                    Accuracy:<%= levelup.accuracy %>
-                    </p>
-                    <% } %>
-            </div>
-            <br><br>
-            <div>
-                <% for( let tm of pokemon.skills.tm) { %>
-                    <p>Skill Name: <%= tm.ename %>
-                            Power: <%= tm.power %>
-                                Pp: <%= tm.pp %>
-                                    Accuracy: <%= tm.accuracy %>
-                    </p>
-                    <% } %>
-            </div>
-            <br><br>
-            <div>
-                <% for( let transfer of pokemon.skills.transfer) { %>
-                    <p>Skill Name: <%= transfer.ename %>
-                            Power: <%= transfer.power %>
-                                Pp: <%= transfer.pp %>
-                                    Accuracy: <%= transfer.accuracy %>
-                    </p>
-                    <% } %>
-            </div>
-            <br><br>
-            <div>
-                <% for( let tutor of pokemon.skills.tutor) { %>
-                    <p>Skill Name: <%= tutor.ename %>
-                            Power: <%= tutor.power %>
-                                Pp: <%= tutor.pp %>
-                                    Accuracy: <%= tutor.accuracy %>
-                    </p>
-                    <% } %>
-            </div>
+            <br><br><br><br>
 
         </div>
+        <br><br><br><br>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
