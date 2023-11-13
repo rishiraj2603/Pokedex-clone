@@ -5,7 +5,6 @@ const pokemonService = require("./services/pokemon-service");
 const skillsService = require("./services/skills-service");
 const mongoose = require("mongoose");
 const MONGO_DB_URL= process.env.MONGO_DB_URL || 'mongodb://localhost/pokedex'
-console.log("🚀 ~ file: load-db.js:8 ~ MONGO_DB_URL:", MONGO_DB_URL)
 
 
 mongoose.connect(MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
