@@ -7,6 +7,7 @@ const ejsMate = require('ejs-mate');
 const pokemons = require('./models/pokemons');
 const types = require('./models/types');
 const app = express();
+const MONGO_DB_URL= process.env.MONGO_DB_URL || 'mongodb://localhost/pokedex'
 const PORT = process.env.port || 3000;
 
 
@@ -27,7 +28,7 @@ app.use(bodyParser.text());
 
 const router = require('./routes/router');
 app.use(router);
-mongoose.connect('mongodb://localhost/pokedex',{ useNewUrlParser: true , useUnifiedTopology: true   });
+mongoose.connect(MONGO_DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true   });
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', () => {
   console.log(`Database connected!`);

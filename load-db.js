@@ -1,10 +1,14 @@
 // Service dependancies
+require('dotenv').config();
 const typeService = require("./services/type-service");
 const pokemonService = require("./services/pokemon-service");
 const skillsService = require("./services/skills-service");
 const mongoose = require("mongoose");
+const MONGO_DB_URL= process.env.MONGO_DB_URL || 'mongodb://localhost/pokedex'
+console.log("🚀 ~ file: load-db.js:8 ~ MONGO_DB_URL:", MONGO_DB_URL)
 
-mongoose.connect("mongodb://localhost/pokedex", { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect(MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on("error", console.error.bind(console, "connection error:"));
 mongoose.connection.once("open", () => {
   console.log(`Database connected!`);
