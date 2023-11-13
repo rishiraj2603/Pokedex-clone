@@ -1,7 +1,8 @@
 // Services dependancies
 const router = require('express').Router();
 const Pokemon = require('../models/pokemons');
-const Type = require('../models/types')
+const Type = require('../models/types');
+require('../models/skill');
 
 
 router.get('/',(req,res)=>{
